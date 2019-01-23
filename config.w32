@@ -1,0 +1,13 @@
+// $Id$
+// vim:ft=javascript
+
+// If your extension references something external, use ARG_WITH
+// ARG_WITH("opencv3_hl", "for opencv3_hl support", "no");
+
+// Otherwise, use ARG_ENABLE
+ARG_ENABLE("opencv3_hl", "enable opencv3_hl support", "no");
+
+if (PHP_OPENCV3_HL != "no") {
+	EXTENSION("opencv3_hl", "opencv3_hl.c", PHP_EXTNAME_SHARED, "/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1");
+}
+
